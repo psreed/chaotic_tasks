@@ -3,5 +3,13 @@
   "supports_noop": false,
   "description": "A short description of this task",
   "parameters": {
+    "iamsure": {
+      "description": "Must be set to YES in order to invoke",
+      "type": "String[1]"
+    },
+    "iamreallysure": {
+      "description": "Must also be set to YES in order to invoke",
+      "type": "String[1]"
+    }
   }
 }
