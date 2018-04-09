@@ -1,6 +1,6 @@
 #!/bin/sh
-if [[ $PT_iamsure == "YES" ]]; then
-  if [[ $PT_iamreallysure == "YES" ]]; then
+if [[ $PT_iamreallysure == "YES" ]]; then
+  if [[ $PT_iamreallyreallysure == "YES" ]]; then
     echo "Removing /opt/IBM"
     rm -rf /opt/IBM
     echo "Removing /var/ibm"
