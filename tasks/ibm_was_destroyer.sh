@@ -9,5 +9,8 @@ if [[ $PT_iamsure == "YES" ]]; then
     rm -rf /home/wsadmin
     userdel wsadmin
     groupdel wsadmins
+  else
+    echo "You weren't really sure, so we did nothing..."
   fi
+  echo "You weren't sure, so we weren't sure, so we didn't do anything..."
 fi
