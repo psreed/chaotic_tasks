@@ -1,10 +1,10 @@
 #!/bin/sh
 if [[ $PT_iamreallysure == "YES" ]]; then
   if [[ $PT_iamreallyreallysure == "YES" ]]; then
+    echo "Killing Java Processes"
+    ps ax | grep java | grep -v grep | cut -d" " -f 1 | xargs kill -9
     echo "Removing /opt/IBM"
     rm -rf /opt/IBM
-    echo "Removing /var/ibm"
-    rm -rf /var/ibm
     echo "Removing wsadmin user (including home directory)"
     rm -rf /home/wsadmin
     userdel wsadmin
