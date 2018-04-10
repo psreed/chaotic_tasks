@@ -2,7 +2,7 @@
 if [[ $PT_iamreallysure == "YES" ]]; then
   if [[ $PT_iamreallyreallysure == "YES" ]]; then
     echo "Killing Java Processes (and not in a nice way... -9)"
-    ps ax | grep java | grep -v grep | cut -d" " -f 1 | xargs kill -9
+    ps ax | grep java | grep -v grep | cut -d" " -f 1 | xargs kill -9 >/dev/null 2>&1 
     echo "Removing everything in /opt/IBM"
     rm -rf /opt/IBM
     echo "Removing wsadmin user (including home directory)"
