@@ -1,0 +1,11 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Purge a node from a Puppet Enterprise Implementation.",
+  "parameters": {
+    "certname": {
+      "description": "Certificate name of the endpoint to remove.",
+      "type": "String[1]"
+    }
+  }
+}
