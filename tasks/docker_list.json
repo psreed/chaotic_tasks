@@ -1,0 +1,7 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "List local containers and images on a docker host",
+  "parameters": {
+  }
+}
