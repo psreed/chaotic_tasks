@@ -11,6 +11,7 @@ if [ -z $IMG ]; then echo "Could not get image ID."; echo $IMG; exit 1; fi
 CON=`docker container list | awk '/puppet\/continuous-delivery-for-puppet-enterprise/ && /\/sbin\/init/ && /cd4pe/ {print $1}'`
 if [ -z $CON ]; then echo "Could not get container ID."; echo $CON; exit 1; fi
 
+#Stop Container
 C=`docker stop $CON 2>&1`
 if [[ "$C" != "$CON" ]]; then 
   echo "Could not stop container for continuous delivery for puppet enterprise."
@@ -18,6 +19,17 @@ if [[ "$C" != "$CON" ]]; then
   echo $C
   exit 1
 fi
+
+#Remove Container
+R=`docker rm $CON 2>&1`
+if [[ "$R" != "$CON" ]]; then 
+  echo "Could not remove container for continuous delivery for puppet enterprise."
+  echo $CON
+  echo $R
+  exit 1
+fi
+
+#Remove Image
 I=`docker rmi $IMG 2>&1`
 if [[ "$I" != "$IMG" ]]; then 
   echo "Could not remove image for continuous delivery for puppet enterprise container."
@@ -26,8 +38,8 @@ if [[ "$I" != "$IMG" ]]; then
   exit 1
 fi
 
-#pull latest
+#Pull Newest Image
 docker pull puppet/continuous-delivery-for-puppet-enterprise:latest
 
-#run puppet to start the container
+#Run puppet to restart the container
 puppet agent -t
