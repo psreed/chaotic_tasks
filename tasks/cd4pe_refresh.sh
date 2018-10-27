@@ -22,9 +22,8 @@ fi
 
 #Remove Container
 R=`docker rm $CON 2>&1`
-if [[ "$R" != "$CON" ]]; then 
+if [[  "$R" == *"No such container"* ]]; then 
   echo "Could not remove container for continuous delivery for puppet enterprise."
-  echo $CON
   echo $R
   exit 1
 fi
