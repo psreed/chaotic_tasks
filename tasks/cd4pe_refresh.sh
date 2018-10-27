@@ -30,12 +30,6 @@ fi
 
 #Remove Image
 I=`docker rmi $IMG 2>&1`
-#if [[ "$I" != "$IMG" ]]; then 
-#  echo "Could not remove image for continuous delivery for puppet enterprise container."
-#  echo $IMG
-#  echo $I
-#  exit 1
-#fi
 
 #Pull Newest Image
 docker pull puppet/continuous-delivery-for-puppet-enterprise:latest
