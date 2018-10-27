@@ -1,7 +1,11 @@
 {
   "puppet_task_version": 1,
   "supports_noop": false,
-  "description": "Check uptime (test to see if it works across windows and linux)",
+  "description": "Check uptime",
   "parameters": {
-  }
+  },
+  "implementations" : [
+    {"name": "uptime.sh", "requirements": ["shell"]},
+    {"name": "uptime.ps1", "requirements": ["powershell"]}
+  ]
 }
