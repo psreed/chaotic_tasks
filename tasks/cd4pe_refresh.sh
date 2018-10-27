@@ -7,7 +7,7 @@ if [[ "`/usr/bin/which docker 2>&1 | grep "no docker in"`" =~ "docker" ]]; then
 fi
 
 #Test for cd4pe container
-if [[ "`docker image list | grep puppet/continuous-delivery-for-puppet-enterprise`" =~ "continuous-delivery-for-puppet-enterprise" ]]; then 
+if ! [[ "`docker image list | grep puppet/continuous-delivery-for-puppet-enterprise`" =~ "continuous-delivery-for-puppet-enterprise" ]]; then 
   echo "Continuous Delivery for Puppet Enterprise container not found on selected host"
   exit 1
 fi
