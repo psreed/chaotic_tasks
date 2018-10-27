@@ -1,0 +1,7 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Refresh CD4PE Container which is managed by puppet (Remove docker image, pull latest and run puppet to restart the container).",
+  "parameters": {
+  }
+}
