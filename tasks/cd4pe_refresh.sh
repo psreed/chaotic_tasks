@@ -6,10 +6,10 @@ if [ -z $DOCKER ]; then echo "No docker on selected host."; exit 1; fi
 
 #docker stop & remove image
 IMG=`docker image list | awk '/puppet\/continuous-delivery-for-puppet-enterprise/ {print $3}'`
-if [ -z $IMG ]; then echo "Could not get image ID."; echo $IMG; exit 1; fi
+if [ -z $IMG ]; then echo "Could not get image ID for puppet/continuous-delivery-for-puppet-enterprise."; echo $IMG; exit 1; fi
 
 CON=`docker container list | awk '/puppet\/continuous-delivery-for-puppet-enterprise/ && /\/sbin\/init/ && /cd4pe/ {print $1}'`
-if [ -z $CON ]; then echo "Could not get container ID."; echo $CON; exit 1; fi
+if [ -z $CON ]; then echo "Could not get container ID for puppet/continuous-delivery-for-puppet-enterprise."; echo $CON; exit 1; fi
 
 #Stop Container
 C=`docker stop $CON 2>&1`
