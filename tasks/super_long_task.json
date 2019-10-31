@@ -1,11 +1,15 @@
 {
   "puppet_task_version": 1,
   "supports_noop": false,
-  "description": "Sleeps for a really long time (30mins) in order to force a timeout.",
+  "description": "Sleeps for a specified amount of time.",
   "parameters": {
+    "length": {
+      "description": "Number of seconds to sleep. (Default: 1800)",
+      "type": "Optional[Integer]"
+    }    
   },
   "implementations" : [
-    {"name": "uptime.sh", "requirements": ["shell"]},
-    {"name": "uptime.ps1", "requirements": ["powershell"]}
+    {"name": "super_long_task.sh", "requirements": ["shell"]},
+    {"name": "super_long_task.ps1", "requirements": ["powershell"]}
   ]
 }
