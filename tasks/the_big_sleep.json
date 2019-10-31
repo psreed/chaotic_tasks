@@ -5,11 +5,11 @@
   "parameters": {
     "length": {
       "description": "Number of seconds to sleep. (Default: 1800)",
-      "type": "Optional[String[1]]"
+      "type": "Optional[Integer]"
     }    
   },
   "implementations" : [
-    {"name": "super_long_task.sh", "requirements": ["shell"]},
-    {"name": "super_long_task.ps1", "requirements": ["powershell"]}
+    {"name": "the_big_sleep.sh", "requirements": ["shell"]},
+    {"name": "the_big_sleep.ps1", "requirements": ["powershell"]}
   ]
 }

@@ -1,11 +1,11 @@
 [CmdletBinding()]
-  Param(
-    [Parameter(Mandatory = $False)]
-      [String]
-        $length
+Param(
+  [Parameter(Mandatory = $False)]
+  [ValidateRange(0,[int]::MaxValue)]
+  [int] $length
 )
 
-if ($length -eq $null -or $length -eq "") { 
+if ($length -eq $null) { 
     $length=1800
 }
 
