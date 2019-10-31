@@ -5,7 +5,7 @@ Param(
   [int] $length
 )
 
-if ($length -eq $null) { 
+if ($length -eq $null -or "${length}" -eq "") { 
     $length=1800
 }
 
