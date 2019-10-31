@@ -5,7 +5,7 @@
         $length
 )
 
-if ($length -eq $null or $length -eq "") { 
+if ($length -eq $null -or $length -eq "") { 
     $length=1800
 }
 
