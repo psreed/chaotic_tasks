@@ -1,7 +1,7 @@
 [CmdletBinding()]
   Param(
     [Parameter(Mandatory = $False)]
-      [Integer]
+      [String]
         $length
 )
 

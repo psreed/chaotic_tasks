@@ -5,7 +5,7 @@
   "parameters": {
     "length": {
       "description": "Number of seconds to sleep. (Default: 1800)",
-      "type": "Optional[Integer]"
+      "type": "Optional[String[1]]"
     }    
   },
   "implementations" : [
