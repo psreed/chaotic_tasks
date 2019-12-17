@@ -1,0 +1,18 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Updates Puppet Master",
+  "parameters": {
+    "version": {
+      "description": "Version to update to.",
+      "type": "Optional[String]"
+    },    
+    "url": {
+      "description": "URL Override",
+      "type": "Optional[String]"
+    }    
+  },
+  "implementations" : [
+    {"name": "update_puppet_master.sh", "requirements": ["shell"]}
+  ]
+}
